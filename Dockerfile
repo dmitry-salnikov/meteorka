@@ -7,6 +7,7 @@ RUN apt-get update && apt-get -f install -y && apt-get install -y --no-install-r
   && rm -rf /var/lib/apt/lists/* \
   && groupadd -r node \
   && useradd -r -m -g node node \
+  && mkdir -p /home/node/app \
   && chown -R node:node /home/node/
 
 USER node
