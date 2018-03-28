@@ -22,6 +22,6 @@ git-ref-commit() {
   echo $(git-ref-repo)\:$(git-commit-short)
 }
 
-git-ref-commit() {
+git-ref-latest() {
   echo $(git-ref-repo)\:latest
 }
