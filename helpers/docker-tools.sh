@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 source ./git-tools.sh
-REPO_REF="$(git-ref-repo)"
+DOCKER_HUB_USERNAME="mitusha"
+REPO_REF="${DOCKER_HUB_USERNAME}/$(git-repo-name)"
 TAG_HEAD="$(git-ref-commit)"
 TAG_LATEST="$(git-ref-repo)":latest
 
