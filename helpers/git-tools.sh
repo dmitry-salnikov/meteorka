@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-# Get the latest commit short SHA-1 in current folder repository
+REPOUSER="$1"
+
+git-user-name() {
+  echo ${REPOUSER:-$(git remote -v | grep "(fetch)" | sed 's/.*\/\([^ ]*\)\/.*/\1/')}
+}
 
 git-commit-short() {
   echo $(git rev-parse --short HEAD)
@@ -10,9 +14,6 @@ git-repo-name() {
   echo $(basename -s .git `git config --get remote.origin.url`)
 }
 
-git-user-name() {
-  echo $(git remote -v | grep "(fetch)" | sed 's/.*\/\([^ ]*\)\/.*/\1/')
-}
 
 git-ref-repo() {
   echo $(git-user-name)/$(git-repo-name)
