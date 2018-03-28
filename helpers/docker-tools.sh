@@ -3,7 +3,7 @@
 source ./git-tools.sh
 REPO_REF="$(git-ref-repo)"
 TAG_HEAD="$(git-ref-commit)"
-TAG_LATEST="$(git-ref-repo)\:latest"
+TAG_LATEST="$(git-ref-repo)\\:latest"
 
 docker-build() {
   docker build -t "$TAG_HEAD" .
