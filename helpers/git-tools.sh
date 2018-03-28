@@ -11,7 +11,8 @@ git-repo-name() {
 }
 
 git-user-name() {
-  echo $(git remote -v | grep "(fetch)" | sed 's/.*\/\([^ ]*\)\/.*/\1/')
+  # echo $(git remote -v | grep "(fetch)" | sed 's/.*\/\([^ ]*\)\/.*/\1/')
+  echo "mitusha"
 }
 
 git-ref-repo() {
