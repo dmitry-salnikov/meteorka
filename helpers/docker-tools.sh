@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-source ./git-tools.sh
 DOCKER_HUB_USERNAME="mitusha"
-REPO_REF="${DOCKER_HUB_USERNAME}/$(git-repo-name)"
+source ./git-tools.sh "$DOCKER_HUB_USERNAME"
+
+REPO_REF="$(git-ref-repo)"
 TAG_HEAD="$(git-ref-commit)"
-TAG_LATEST="$(git-ref-repo)":latest
+TAG_LATEST="$(git-ref-latest)"
 
 docker-build() {
   docker build -t "$TAG_HEAD" .
