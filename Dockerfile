@@ -1,7 +1,4 @@
 FROM buildpack-deps:jessie-scm
-MAINTAINER Dmitry Salnikov
-
-USER root
 
 RUN apt-get update && apt-get -f install -y && apt-get install -y --no-install-recommends \
     wget \
