@@ -12,6 +12,8 @@ RUN apt-get update && apt-get -f install -y && apt-get install -y --no-install-r
 
 USER node
 
+WORKDIR /home/node/app
+
 # Create a non-privileged user to do most all the work as.
 # We do this now to create the home directory.
 # RUN groupadd -r node && useradd -r -m -g node node
