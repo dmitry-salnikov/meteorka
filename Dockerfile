@@ -4,15 +4,16 @@ RUN apt-get update && apt-get -f install -y && apt-get install -y --no-install-r
     wget \
     curl \
     ca-certificates \
-  && rm -rf /var/lib/apt/lists/* \
-  && groupadd -r node \
-  && useradd -r -m -g node node \
-  && mkdir -p /home/node/app \
-  && chown -R node:node /home/node/
+ && rm -rf /var/lib/apt/lists/* \
+ && groupadd -r node \
+ && useradd -r -m -g node node
+
+RUN mkdir -p /home/node/app \
+ && chown -R node:node /home/node
 
 USER node
 
-WORKDIR /home/node/app
+WORKDIR /home/node
 
 # Create a non-privileged user to do most all the work as.
 # We do this now to create the home directory.
